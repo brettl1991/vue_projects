@@ -1,8 +1,12 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const title = ref("Quote generator");
+title.value = "Programming Quotes";
+</script>
 
 <template>
   <header>
-    <h1>Quote generator</h1>
+    <h1>{{ title }}</h1>
   </header>
 </template>
 

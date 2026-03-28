@@ -1,10 +1,19 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const quote = ref("First solve the problem. Then, write the code.");
+const author = ref("Agnes Brettl");
+const href = ref("https://en.wikipedia.org/wiki/Undocumented_feature)");
+quote.value = "Coding is fun sometimes";
+author.value = "Istvan Acs";
+</script>
 
 <template>
   <main>
     <section>
-      <p>First, solve the problem. Then, write the code.</p>
-      <span>John Johnson</span>
+      <p>{{ quote }}</p>
+      <a v-bind:href="href"
+        ><span>{{ author }}</span></a
+      >
     </section>
     <button>Another!</button>
   </main>
@@ -21,7 +30,7 @@ main {
   align-items: center;
   gap: 10px;
 }
-main section {
+section {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -29,31 +38,32 @@ main section {
   margin-bottom: 25px;
 }
 
-main p {
+p {
   font-weight: bold;
   font-style: italic;
   font-size: 2rem;
   text-align: left;
 }
 
-main p::before {
+p::before {
   content: '"';
 }
 
-main p::after {
+p::after {
   content: '"';
 }
 
-main span {
+span,
+a {
   align-self: end;
   color: #406473;
 }
 
-main span::before {
+span::before {
   content: "- ";
 }
 
-main button {
+button {
   background: #406473;
   color: white;
   padding: 10px;
@@ -65,7 +75,7 @@ main button {
   cursor: pointer;
   transition: transform 0.2s;
 }
-main button:hover {
+button:hover {
   transform: scale(1.05);
 }
 </style>
