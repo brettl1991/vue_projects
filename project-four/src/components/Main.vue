@@ -7,7 +7,7 @@ import src from "@/assets/images/b.png";
     <h1>Cat Enthusiast's Box</h1>
 
     <!-- PRODUCT IMAGE START -->
-    <img :src="src" alt="cat b" />
+    <img :src alt="cat b" />
     <!-- PRODUCT IMAGE END -->
 
     <p>
